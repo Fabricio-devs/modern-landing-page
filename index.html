@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orion Software</title>
+  <meta name="description" content="Software studio: engineering, product delivery, AR/VR and GenAI." />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/app.js"></script>
+  <link rel="apple-touch-icon" sizes="57x57" href="./img/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./img/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./img/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./img/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./img/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./img/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./img/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./img/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="./img/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./img/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+  <link rel="manifest" href="./img/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <canvas id="bgParticles" aria-hidden="true"></canvas>
+  <div class="bg-arcs" aria-hidden="true"></div>
+
+  <header class="header" id="top">
+    <nav class="nav container">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand__logo" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__name">ORION</span>
+          <span class="brand__sub">SOFTWARE</span>
+        </span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__links" id="navLinks">
+        <a class="nav__link" href="#expertise">Our Expertise</a>
+        <a class="nav__link" href="#portfolio">Portfolio</a>
+        <a class="nav__link" href="#crew">The Crew</a>
+        <a class="nav__link" href="#hiring">We’re hiring</a>
+        <a class="btn btn--outline" href="#contact">Contact Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__left">
+          <h1 class="hero__title">NEED TO EXECUTE AT<br/>LIGHTNING SPEED?</h1>
+          <p class="hero__sub">
+            We build digital products with strong engineering, sharp design, and fast delivery.
+          </p>
+
+          <div class="hero__ctaRow">
+            <a class="btn btn--primary hero__cta" href="#contact">Contact Us</a>
+            <a class="btn btn--ghost hero__cta" href="#portfolio">View Work</a>
+          </div>
+
+          <div class="hero__mini" aria-label="Key stats">
+            <div class="mini">
+              <div class="mini__num" data-counter="90">0</div>
+              <div class="mini__label">Professionals</div>
+            </div>
+            <div class="mini">
+              <div class="mini__num" data-counter="120">0</div>
+              <div class="mini__label">Projects</div>
+            </div>
+            <div class="mini">
+              <div class="mini__num" data-counter="8">0</div>
+              <div class="mini__label">Years</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__right" aria-hidden="true">
+          <!-- Wire Globe (SVG) -->
+          <svg class="globe" viewBox="0 0 520 520">
+            <defs>
+              <radialGradient id="g" cx="35%" cy="30%" r="75%">
+                <stop offset="0%" stop-color="rgba(60,255,235,0.20)"/>
+                <stop offset="55%" stop-color="rgba(255,255,255,0.06)"/>
+                <stop offset="100%" stop-color="rgba(255,255,255,0.00)"/>
+              </radialGradient>
+              <filter id="softGlow">
+                <feGaussianBlur stdDeviation="2" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <circle cx="260" cy="260" r="210" fill="url(#g)" />
+            <g fill="none" stroke="rgba(255,255,255,0.72)" stroke-width="2" filter="url(#softGlow)">
+              <path d="M103 208 L197 98 L352 92 L420 188 L380 340 L240 420 L125 340 Z"/>
+              <path d="M197 98 L224 220 L103 208"/>
+              <path d="M224 220 L352 92"/>
+              <path d="M224 220 L420 188"/>
+              <path d="M224 220 L380 340"/>
+              <path d="M224 220 L240 420"/>
+              <path d="M224 220 L125 340"/>
+              <path d="M352 92 L420 188"/>
+              <path d="M420 188 L380 340"/>
+              <path d="M380 340 L240 420"/>
+              <path d="M240 420 L125 340"/>
+              <path d="M125 340 L103 208"/>
+              <path d="M197 98 L420 188"/>
+              <path d="M197 98 L380 340"/>
+              <path d="M352 92 L380 340"/>
+            </g>
+
+            <g fill="rgba(60,255,235,0.9)">
+              <circle cx="360" cy="160" r="2"/><circle cx="372" cy="172" r="2"/><circle cx="386" cy="184" r="2"/>
+              <circle cx="398" cy="200" r="2"/><circle cx="408" cy="220" r="2"/><circle cx="402" cy="240" r="2"/>
+              <circle cx="388" cy="254" r="2"/><circle cx="372" cy="262" r="2"/><circle cx="354" cy="252" r="2"/>
+              <circle cx="344" cy="236" r="2"/><circle cx="338" cy="214" r="2"/><circle cx="340" cy="190" r="2"/>
+              <circle cx="350" cy="174" r="2"/>
+            </g>
+
+            <circle cx="260" cy="260" r="210" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+          </svg>
+        </div>
+
+        <a class="hero__scroll" href="#expertise" aria-label="Scroll down">
+          <span class="hero__scrollIcon">⌄</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section class="section" id="expertise">
+      <div class="container">
+        <header class="section__head reveal">
+          <h2 class="section__title">Our Expertise</h2>
+          <p class="section__desc">
+            Senior teams to build, iterate, and scale—product, engineering, and design working as one.
+          </p>
+        </header>
+
+        <div class="grid grid-3">
+          <article class="glass-card reveal">
+            <h3>Software Engineering</h3>
+            <p>Architecture, APIs, front-end, performance, and reliability—built for maintainability.</p>
+            <ul class="bullets">
+              <li>Web apps & dashboards</li>
+              <li>APIs & integrations</li>
+              <li>Testing & QA</li>
+            </ul>
+          </article>
+
+          <article class="glass-card reveal">
+            <h3>UX / UI Design</h3>
+            <p>User-centered design with clear visuals, systems thinking, and accessibility.</p>
+            <ul class="bullets">
+              <li>Design systems</li>
+              <li>Prototyping</li>
+              <li>Accessibility</li>
+            </ul>
+          </article>
+
+          <article class="glass-card reveal">
+            <h3>AR / VR Experiences</h3>
+            <p>Immersive products for training, marketing, simulation, and entertainment.</p>
+            <ul class="bullets">
+              <li>Unity pipelines</li>
+              <li>Interactive scenes</li>
+              <li>Device deployment</li>
+            </ul>
+          </article>
+
+          <article class="glass-card reveal">
+            <h3>Generative AI</h3>
+            <p>Automation, internal copilots, and smart workflows to boost throughput.</p>
+            <ul class="bullets">
+              <li>Knowledge assistants</li>
+              <li>RAG + search</li>
+              <li>Workflow automation</li>
+            </ul>
+          </article>
+
+          <article class="glass-card reveal">
+            <h3>Staff Augmentation</h3>
+            <p>Add specialized talent with fast onboarding and delivery-first collaboration.</p>
+            <ul class="bullets">
+              <li>Front-end / Back-end</li>
+              <li>QA / Automation</li>
+              <li>PM / Delivery</li>
+            </ul>
+          </article>
+
+          <article class="glass-card reveal">
+            <h3>Product Delivery</h3>
+            <p>From idea to release: discovery, roadmap, build, measurement, and continuous improvement.</p>
+            <ul class="bullets">
+              <li>Discovery sprints</li>
+              <li>MVP → scale</li>
+              <li>Observability</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="statsBar reveal" aria-label="Highlights">
+          <div class="statPill">
+            <div class="statPill__num" data-counter="35">0</div>
+            <div class="statPill__label">Products launched</div>
+          </div>
+          <div class="statPill">
+            <div class="statPill__num" data-counter="4">0</div>
+            <div class="statPill__label">Continents served</div>
+          </div>
+          <div class="statPill">
+            <div class="statPill__num" data-counter="24">0</div
+::contentReference[oaicite:0]{index=0}
+>
+            <div class="statPill__label">Avg. weeks to MVP</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section section--alt" id="portfolio">
+      <div class="container">
+        <header class="section__head reveal">
+          <h2 class="section__title">Portfolio</h2>
+          <p class="section__desc">
+            Sample cases (demo). Swap titles and tags with your real projects.
+          </p>
+        </header>
+
+        <div class="portfolio">
+          <article class="case case--featured reveal">
+            <div class="case__media case__media--fintech" aria-hidden="true">
+              <svg viewBox="0 0 200 120" aria-hidden="true">
+                <rect x="10" y="20" width="180" height="80" rx="14"
+                      fill="rgba(255,255,255,0.06)"
+                      stroke="rgba(255,255,255,0.14)"/>
+
+                <rect x="32" y="60" width="14" height="30" rx="4" fill="rgba(46,247,208,0.6)"/>
+                <rect x="56" y="45" width="14" height="45" rx="4" fill="rgba(46,247,208,0.85)"/>
+                <rect x="80" y="70" width="14" height="20" rx="4" fill="rgba(46,247,208,0.4)"/>
+
+                <path d="M105 75 C125 55,145 65,165 45"
+                      stroke="rgba(46,247,208,0.85)"
+                      stroke-width="3"
+                      fill="none"
+                      stroke-linecap="round"/>
+              </svg>           
+            </div>
+            <div class="case__body">
+              <p class="tag">Fintech</p>
+              <h3>Operations & reconciliation platform</h3>
+              <p>
+                A modern dashboard with alerts, reporting, and audit trails—designed to reduce operational errors.
+              </p>
+              <div class="case__meta">
+                <span class="pill2">Web App</span>
+                <span class="pill2">APIs</span>
+                <span class="pill2">Analytics</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case__media case__media--health" aria-hidden="true">
+              <svg viewBox="0 0 200 120" aria-hidden="true">
+                  <!-- card frame -->
+                  <rect x="10" y="20" width="180" height="80" rx="14"
+                        fill="rgba(255,255,255,0.05)"
+                        stroke="rgba(255,255,255,0.14)"/>
+
+                  <!-- baseline -->
+                  <path d="M28 70 H172"
+                        stroke="rgba(255,255,255,0.12)"
+                        stroke-width="2"/>
+
+                  <!-- heartbeat line -->
+                  <path d="M28 70 L50 70 L60 45 L75 95 L92 60 L120 60"
+                        stroke="rgba(46,247,208,0.85)"
+                        stroke-width="3"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+
+                  <!-- markers -->
+                  <circle cx="60" cy="45" r="4" fill="rgba(46,247,208,0.95)"/>
+                  <circle cx="75" cy="95" r="4" fill="rgba(46,247,208,0.65)"/>
+                  <circle cx="92" cy="60" r="4" fill="rgba(46,247,208,0.85)"/>
+                </svg>
+            </div>
+            <div class="case__body">
+              <p class="tag">Health</p>
+              <h3>Patient monitoring dashboard</h3>
+              <p>Real-time status, threshold alerts, and role-based views for clinical teams.</p>
+              <div class="case__meta">
+                <span class="pill2">Realtime</span>
+                <span class="pill2">RBAC</span>
+                <span class="pill2">Charts</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case__media case__media--commerce" aria-hidden="true">
+                <svg viewBox="0 0 200 120" aria-hidden="true">
+                  <!-- frame -->
+                  <rect x="10" y="20" width="180" height="80" rx="14"
+                        fill="rgba(255,255,255,0.05)"
+                        stroke="rgba(255,255,255,0.14)"/>
+
+                  <!-- product image placeholder -->
+                  <rect x="22" y="32" width="56" height="56" rx="10"
+                        fill="rgba(255,255,255,0.08)"/>
+
+                  <!-- title lines -->
+                  <rect x="90" y="38" width="90" height="8" rx="4"
+                        fill="rgba(255,255,255,0.18)"/>
+                  <rect x="90" y="52" width="70" height="6" rx="3"
+                        fill="rgba(255,255,255,0.12)"/>
+
+                  <!-- price -->
+                  <rect x="90" y="66" width="32" height="10" rx="5"
+                        fill="rgba(46,247,208,0.75)"/>
+
+                  <!-- CTA button -->
+                  <rect x="90" y="82" width="52" height="14" rx="7"
+                        fill="rgba(46,247,208,0.25)"
+                        stroke="rgba(46,247,208,0.45)"/>
+
+                  <!-- accent lines -->
+                  <path d="M28 96 H78"
+                        stroke="rgba(46,247,208,0.55)"
+                        stroke-width="3"
+                        stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="case__body">
+              <p class="tag">E-commerce</p>
+              <h3>High-performance storefront</h3>
+              <p>Mobile-first shopping experience with fast pages and clean UI patterns.</p>
+              <div class="case__meta">
+                <span class="pill2">Mobile</span>
+                <span class="pill2">SEO</span>
+                <span class="pill2">Perf</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case__media case__media--edtech" aria-hidden="true">
+              <svg viewBox="0 0 200 120" aria-hidden="true">
+                <!-- frame -->
+                <rect x="10" y="20" width="180" height="80" rx="14"
+                      fill="rgba(255,255,255,0.05)"
+                      stroke="rgba(255,255,255,0.14)"/>
+
+                <!-- left content list -->
+                <rect x="26" y="36" width="54" height="10" rx="5" fill="rgba(255,255,255,0.18)"/>
+                <rect x="26" y="52" width="46" height="8"  rx="4" fill="rgba(255,255,255,0.12)"/>
+                <rect x="26" y="66" width="50" height="8"  rx="4" fill="rgba(255,255,255,0.12)"/>
+
+                <!-- AI hub -->
+                <circle cx="120" cy="60" r="18"
+                        fill="rgba(46,247,208,0.20)"
+                        stroke="rgba(46,247,208,0.45)"/>
+
+                <!-- nodes -->
+                <circle cx="92"  cy="44" r="4" fill="rgba(46,247,208,0.85)"/>
+                <circle cx="92"  cy="76" r="4" fill="rgba(46,247,208,0.65)"/>
+                <circle cx="152" cy="44" r="4" fill="rgba(46,247,208,0.75)"/>
+                <circle cx="152" cy="76" r="4" fill="rgba(46,247,208,0.85)"/>
+
+                <!-- connections -->
+                <path d="M92 44  L120 60" stroke="rgba(46,247,208,0.65)" stroke-width="2"/>
+                <path d="M92 76  L120 60" stroke="rgba(46,247,208,0.45)" stroke-width="2"/>
+                <path d="M152 44 L120 60" stroke="rgba(46,247,208,0.55)" stroke-width="2"/>
+                <path d="M152 76 L120 60" stroke="rgba(46,247,208,0.75)" stroke-width="2"/>
+
+                <!-- focus indicator -->
+                <circle cx="120" cy="60" r="3.5" fill="rgba(46,247,208,0.95)"/>
+              </svg>
+            </div>
+            <div class="case__body">
+              <p class="tag">EdTech + AI</p>
+              <h3>Learning platform with AI workflows</h3>
+              <p>Content, quizzes, and smart recommendations with measurable outcomes.</p>
+              <div class="case__meta">
+                <span class="pill2">Search</span>
+                <span class="pill2">RAG</span>
+                <span class="pill2">Insights</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case__media case__media--saas" aria-hidden="true">
+              <svg viewBox="0 0 200 120" aria-hidden="true">
+                <!-- frame -->
+                <rect x="10" y="20" width="180" height="80" rx="14"
+                      fill="rgba(255,255,255,0.05)"
+                      stroke="rgba(255,255,255,0.14)"/>
+
+                <!-- left sidebar -->
+                <rect x="22" y="30" width="40" height="60" rx="10"
+                      fill="rgba(255,255,255,0.06)"/>
+                <rect x="28" y="38" width="26" height="6" rx="3" fill="rgba(255,255,255,0.16)"/>
+                <rect x="28" y="52" width="22" height="5" rx="2.5" fill="rgba(255,255,255,0.10)"/>
+                <rect x="28" y="64" width="24" height="5" rx="2.5" fill="rgba(255,255,255,0.10)"/>
+                <rect x="28" y="76" width="18" height="5" rx="2.5" fill="rgba(255,255,255,0.10)"/>
+
+                <!-- main cards -->
+                <rect x="70" y="34" width="110" height="22" rx="10"
+                      fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+                <rect x="70" y="62" width="110" height="28" rx="12"
+                      fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+
+                <!-- approval check -->
+                <circle cx="160" cy="45" r="7" fill="rgba(46,247,208,0.20)" stroke="rgba(46,247,208,0.55)"/>
+                <path d="M156 45 L159 48 L165 41"
+                      stroke="rgba(46,247,208,0.90)" stroke-width="2.4"
+                      fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+                <!-- automation flow dots -->
+                <circle cx="88" cy="76" r="3.5" fill="rgba(46,247,208,0.85)"/>
+                <circle cx="110" cy="76" r="3.5" fill="rgba(46,247,208,0.55)"/>
+                <circle cx="132" cy="76" r="3.5" fill="rgba(46,247,208,0.75)"/>
+                <circle cx="154" cy="76" r="3.5" fill="rgba(46,247,208,0.90)"/>
+                <path d="M92 76 H150"
+                      stroke="rgba(46,247,208,0.40)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="clients">
+              
+              <div class="case__body">
+                <p class="tag">SaaS</p>
+                <h3>Internal tooling suite</h3>
+                <p>Automations, approvals, and dashboards that remove manual work from teams.</p>
+                <div class="case__meta">
+                  <span class="pill2">Automation</span>
+                  <span class="pill2">Audit</span>
+                  <span class="pill2">Ops</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREW -->
+    <section class="section" id="crew">
+      <div class="container">
+        <header class="section__head reveal">
+          <h2 class="section__title">The Crew</h2>
+          <p class="section__desc">
+            A multidisciplinary team built around delivery, quality, and long-term maintainability.
+          </p>
+        </header>
+
+        <div class="crew reveal">
+          <div class="crew__left">
+            <h3>Cutting-edge engineering</h3>
+            <p>
+              We ship features with a production mindset: code reviews, clear ownership, and measurable outcomes.
+              Our process favors clarity, communication, and predictable delivery.
+            </p>
+
+            <div class="checkGrid">
+              <div class="checkItem">• Product-driven execution</div>
+              <div class="checkItem">• Clear roadmaps and milestones</div>
+              <div class="checkItem">• Testing & quality gates</div>
+              <div class="checkItem">• Documentation-first habits</div>
+              <div class="checkItem">• Strong UI consistency</div>
+              <div class="checkItem">• Continuous improvement</div>
+            </div>
+          </div>
+
+          <div class="crew__right">
+            <div class="glass-card">
+              <h3>Co-located teams</h3>
+              <p>Distributed LATAM base with flexible global coverage per project.</p>
+
+              <div class="locations">
+                <span class="pill2">Buenos Aires</span>
+                <span class="pill2">Córdoba</span>
+                <span class="pill2">Montevideo</span>
+                <span class="pill2">Madrid</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clients_title">
+          <p>A few of our clients</p>
+          <div class="logosRow reveal" aria-label="Trusted by">
+            <span class="logoPill amazon">
+              <i class="icon-amazon"></i>
+            </span>
+            <span class="logoPill apple">
+              <i class="icon-apple"></i>
+            </span>
+            <span class="logoPill bitcoin">
+              <i class="icon-bitcoin"></i>
+            </span>
+            <span class="logoPill css">
+              <i class="icon-css3"></i>
+            </span>
+            <span class="logoPill facebook">
+              <i class="icon-facebook"></i>
+            </span>
+            <span class="logoPill gmail">
+              <i class="icon-gmail"></i>
+            </span>
+            <span class="logoPill hp">
+              <i class="icon-hp"></i>
+            </span>
+            <span class="logoPill instagram">
+              <i class="icon-instagram"></i>
+            </span>
+            <span class="logoPill ios">
+              <i class="icon-ios"></i>
+            </span>
+            <span class="logoPill mercedes">
+              <i class="icon-mercedes"></i>
+            </span>
+            <span class="logoPill edge">
+              <i class="icon-microsoftedge"></i>
+            </span>
+            <span class="logoPill excel">
+              <i class="icon-microsoftexcel"></i>
+            </span>
+            <span class="logoPill play">
+              <i class="icon-playstation"></i>
+            </span>
+            <span class="logoPill sam">
+              <i class="icon-samsung"></i>
+            </span>
+            <span class="logoPill sap">
+              <i class="icon-sap"></i>
+            </span>
+            <span class="logoPill spo">
+              <i class="icon-spotify"></i>
+            </span>
+            <span class="logoPill tik">
+              <i class="icon-tiktok"></i>
+            </span>
+            <span class="logoPill ubi">
+              <i class="icon-ubisoft"></i>
+            </span>
+            <span class="logoPill unity">
+              <i class="icon-unity"></i>
+            </span>
+            <span class="logoPill unreal">
+              <i class="icon-unrealengine"></i>
+            </span>
+            <span class="logoPill vs">
+              <i class="icon-visualstudiocode"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIRING -->
+    <section class="section section--alt" id="hiring">
+      <div class="container">
+        <header class="section__head reveal">
+          <h2 class="section__title">We’re hiring</h2>
+          <p class="section__desc">
+            Join projects with real users, clear standards, and room to grow.
+          </p>
+        </header>
+
+        <div class="jobs">
+          <article class="job reveal">
+            <div class="job__main">
+              <h3>Front-end Developer</h3>
+              <p>HTML/CSS/JS · Responsive · Accessibility · Performance</p>
+              <div class="job__tags">
+                <span class="pill2">Remote</span>
+                <span class="pill2">Mid/Senior</span>
+                <span class="pill2">Full-time</span>
+              </div>
+            </div>
+            <a class="btn btn--outline" href="#contact">Apply</a>
+          </article>
+
+          <article class="job reveal">
+            <div class="job__main">
+              <h3>UI/UX Designer</h3>
+              <p>Design systems · Prototypes · Research · Handoff</p>
+              <div class="job__tags">
+                <span class="pill2">Remote</span>
+                <span class="pill2">Mid</span>
+                <span class="pill2">Contract</span>
+              </div>
+            </div>
+            <a class="btn btn--outline" href="#contact">Apply</a>
+          </article>
+
+          <article class="job reveal">
+            <div class="job__main">
+              <h3>QA / Automation</h3>
+              <p>Test strategy · Regression · Automation · Reporting</p>
+              <div class="job__tags">
+                <span class="pill2">Remote</span>
+                <span class="pill2">Mid</span>
+                <span class="pill2">Full-time</span>
+              </div>
+            </div>
+            <a class="btn btn--outline" href="#contact">Apply</a>
+          </article>
+        </div>
+
+        <div class="hiringBox reveal">
+          <div>
+            <h3>Don’t see your role?</h3>
+            <p>Send a message with your portfolio and what you want to build.</p>
+          </div>
+          <a class="btn btn--primary" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <header class="section__head reveal">
+          <h2 class="section__title">Contact Us</h2>
+          <p class="section__desc">
+            Tell us what you’re building. This form is a demo (no email is sent).
+          </p>
+        </header>
+
+        <div class="contactGrid">
+          <form class="form reveal" id="contactForm" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" />
+              <small class="error" data-error-for="name"></small>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" />
+              <small class="error" data-error-for="email"></small>
+            </div>
+
+            <div class="field">
+              <label for="topic">Topic</label>
+              <select id="topic" name="topic">
+                <option value="">Select one</option>
+                <option>New product</option>
+                <option>Staff augmentation</option>
+                <option>Design / UX</option>
+                <option>GenAI / automation</option>
+                <option>AR / VR</option>
+              </select>
+              <small class="error" data-error-for="topic"></small>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Describe your project"></textarea>
+              <small class="error" data-error-for="message"></small>
+            </div>
+
+            <button class="btn btn--primary" type="submit">Send message</button>
+            <p class="form__hint" id="formHint" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="side reveal">
+            <div class="glass-card">
+              <h3>What to include</h3>
+              <ul class="bullets">
+                <li>Goals and deadlines</li>
+                <li>Current stack and constraints</li>
+                <li>Rough scope and priorities</li>
+                <li>Budget range (optional)</li>
+              </ul>
+            </div>
+
+            <div class="glass-card">
+              <h3>Response time</h3>
+              <p>We typically reply within 1–2 business days.</p>
+              <div class="side__cta">
+                <a class="btn btn--outline" href="#portfolio">See portfolio</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <footer class="footer">
+          <div class="footer__grid">
+            <div class="footer__brand">
+              <span class="brand__logo" aria-hidden="true"></span>
+              <span>ORION SOFTWARE</span>
+            </div>
+            <div class="footer__links">
+              <a href="#expertise">Expertise</a>
+              <a href="#portfolio">Portfolio</a>
+              <a href="#crew">Crew</a>
+              <a href="#hiring">Hiring</a>
+            </div>
+            <p class="footer__copy">© <span id="year"></span> Orion Software</p>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
